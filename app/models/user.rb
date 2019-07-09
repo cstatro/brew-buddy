@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
         beer = Beer.create(name: hash["name"],style: hash["style"]["shortName"],abv: hash["abv"])
         prompt_for_rating
         input = STDIN.gets.chomp
+        input = input.to_f
+        input = limit_rating(input)
         rating = Rating.create(user: self,beer: beer, rating: input.to_f)  
     end
 end
