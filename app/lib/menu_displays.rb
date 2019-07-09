@@ -9,6 +9,10 @@ def prompt_for_rating
     print_line
 end
 
+def not_found
+    puts "Option not found."
+end
+
 ###SESSION OPEN GREETINGS
 
 def prompt_sign_in
@@ -31,4 +35,15 @@ def display_main_options
     print_line
 end
 
-    ### 
+### MAIN MENU - SUB 1
+
+def prompt_sub_one_start_search
+    puts "1. Enter Your Search"
+    puts "2. Back to Main Menu"
+end
+
+
+def prompt_sub_one
+    puts "Select from above."
+    print_line
+end
