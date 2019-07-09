@@ -3,7 +3,7 @@ class CreateBeerTable < ActiveRecord::Migration[5.2]
     create_table :beers do |t|
       t.string :name
       t.string :brewery
-      t.string :type
+      t.string :style
       t.float :abv
     end
 
