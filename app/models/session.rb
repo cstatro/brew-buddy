@@ -1,5 +1,5 @@
 class Session 
-    attr_accessor :u
+    attr_accessor :u, :current_que
     def initialize
         ###Put Logo Here
         prompt_sign_in
@@ -18,6 +18,6 @@ class Session
         display_main_options
         input = STDIN.gets.chomp
         print_line
-        # handle_main_menu_input(input,self)
+        handle_main_menu_input(input,self)
     end
 end

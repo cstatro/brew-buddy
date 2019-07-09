@@ -19,4 +19,24 @@ def greet_user
     end
 end
 
-####### MAIN MENU
+    ####### MAIN MENU
+
+def handle_main_menu_input(input, session)
+    case(input.to_i)
+    when 1
+        prompt_sub_one_start_search
+        print_line
+        main_sub_one_handle(session)
+        
+    when 2
+    when 3
+    else
+        not_found
+        session.main_menu
+    end
+end
+
+def main_sub_one_handle(session)
+    session.current_que = STDIN.gets.chomp
+    beer_search_with_index(session.current_que)
+end
