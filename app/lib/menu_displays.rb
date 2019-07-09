@@ -40,6 +40,7 @@ end
 def prompt_sub_one
     puts "1. Enter Your Search"
     puts "2. Back to Main Menu"
+    print_line
 end
 
     ### MAIN MENU - SUB 1-1
@@ -53,4 +54,9 @@ def prompt_sub_1_1_result
     puts "Select from above."
     print_line
 end
+
+
+
+### MAIN MENU - SUB 2
+# view my ratings
 

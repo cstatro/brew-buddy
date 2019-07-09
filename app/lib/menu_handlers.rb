@@ -28,6 +28,11 @@ def handle_main_menu_input(input, session)
         main_sub_one_handle(session)
         
     when 2
+
+        session.u.display_ratings
+        print_line
+        session.main_menu
+
     when 3
     else
         not_found
@@ -64,4 +69,8 @@ def main_sub_1_1_choice(session)
     session.u.rate_beer(session.result_list[choice.to_i-1])
     session.main_menu
 end
+
+
+### MAIN MENU - SUB 2
+# view my ratings
             

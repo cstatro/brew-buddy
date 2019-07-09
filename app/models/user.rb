@@ -9,4 +9,11 @@ class User < ActiveRecord::Base
         input = limit_rating(input)
         rating = Rating.create(user: self,beer: beer, rating: input.to_f)  
     end
+
+    def display_ratings
+        self.ratings.each_with_index do |rating,index|
+            puts "#{index+1}. #{rating.beer["name"]} - #{rating.rating}"
+        end
+    end
+    
 end
