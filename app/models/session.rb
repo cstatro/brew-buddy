@@ -1,23 +1,23 @@
 class Session 
-    attr_accessor :logged_in
+    attr_accessor :u
     def initialize
         ###Put Logo Here
-        puts "Welcome to Beer Buddy!"
+        prompt_sign_in
         toggle_login
     end
     def toggle_login
-        if !logged_in
-            @logged_in = greet_user
-            # main_menu
+        if !u
+            @u = greet_user
+            main_menu
         else
             self.view = nil
-            self.logged_in = nil
+            self.u = nil
         end
     end
     def main_menu
-        # display_main_options
+        display_main_options
         input = STDIN.gets.chomp
         print_line
-        handle_main_menu_input(input,self)
+        # handle_main_menu_input(input,self)
     end
 end
