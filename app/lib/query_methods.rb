@@ -6,13 +6,14 @@ def beer_search(arg)
 end
 
 
-
-def beer_search_names(arg)
-    beer_search(arg).each_with_index {|beer, index| "#{index + 1}. #{beer["name"]}"}[0]
+# returns first result of beer_search in a hash
+def beer_search_first(arg)
+    beer_search(arg).find {|beer|beer}
 end
 
-
-
-def beer_search_first(arg)
-    beer_search(arg).find {|beer| beer}
+# puts a numbered list of search results, array of search results is returned
+def beer_search_with_index(arg)
+    beer_search(arg).each_with_index do |beer, index|
+        puts "#{index+1}. #{beer["name"]}"
+    end
 end
