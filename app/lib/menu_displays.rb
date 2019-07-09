@@ -37,13 +37,20 @@ end
 
 ### MAIN MENU - SUB 1
 
-def prompt_sub_one_start_search
+def prompt_sub_one
     puts "1. Enter Your Search"
     puts "2. Back to Main Menu"
 end
 
+    ### MAIN MENU - SUB 1-1
 
-def prompt_sub_one
+def prompt_sub_1_1_search
+    puts "Please Enter Search Query:"
+    print_line
+end
+
+def prompt_sub_1_1_result
     puts "Select from above."
     print_line
 end
+

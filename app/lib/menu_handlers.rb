@@ -24,8 +24,7 @@ end
 def handle_main_menu_input(input, session)
     case(input.to_i)
     when 1
-        prompt_sub_one_start_search
-        print_line
+       
         main_sub_one_handle(session)
         
     when 2
@@ -35,8 +34,34 @@ def handle_main_menu_input(input, session)
         session.main_menu
     end
 end
-
+        ### MAIN MENU - SUB 1
 def main_sub_one_handle(session)
-    session.current_que = STDIN.gets.chomp
-    beer_search_with_index(session.current_que)
+    prompt_sub_one
+    input = STDIN.gets.chomp
+    case(input.to_i)
+    when 1
+        main_sub_1_1_handle(session)
+    when 2
+        session.main_menu
+    else
+        not_found
+        session.main_menu
+    end
+    
 end
+            ### MAIN MENU - SUB 1-1
+def main_sub_1_1_handle(session)
+    prompt_sub_1_1_search
+    session.current_que = STDIN.gets.chomp
+    session.result_list = beer_search_with_index(session.current_que)
+    main_sub_1_1_choice(session)
+
+end
+
+def main_sub_1_1_choice(session)
+    prompt_sub_1_1_result
+    choice = STDIN.gets.chomp
+    session.u.rate_beer(session.result_list[choice.to_i-1])
+    session.main_menu
+end
+            
