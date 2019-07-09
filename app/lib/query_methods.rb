@@ -1,7 +1,7 @@
 
 
 def beer_search(arg)
-    beer = RestClient.get("http://api.brewerydb.com/v2/search?key=3f1a5ca2f9d684d046245ab5c02b0f47&q=#{arg}")
+    beer = RestClient.get("http://api.brewerydb.com/v2/search?key=3f1a5ca2f9d684d046245ab5c02b0f47&q=#{arg}&withBreweries=y")
     result_json = JSON.parse(beer)["data"]
 end
 
@@ -14,6 +14,8 @@ end
 # puts a numbered list of search results, array of search results is returned
 def beer_search_with_index(arg)
     beer_search(arg).each_with_index do |beer, index|
-        puts "#{index+1}. #{beer["name"]}"
+        puts "#{index+1}. #{beer["name"]} - #{beer["breweries"].first["name"]}"
     end
 end
+
+
