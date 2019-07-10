@@ -17,3 +17,11 @@ end
 def joe
     User.find(2)
 end
+### Paginate_Toggling
+
+def page_toggle_up(current,max)
+    current == max ? current : current += 1
+end
+def page_toggle_down(current)
+    current == 1 ? current : current -= 1
+end

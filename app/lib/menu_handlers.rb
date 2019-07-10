@@ -61,6 +61,7 @@ def main_sub_1_1_handle(session)
     prompt_sub_1_1_search
     session.current_que = STDIN.gets.chomp
     session.result_list = beer_search_with_index(session.current_que,session.current_page)
+    session.total_pages = beer_search(session.current_que)["numberOfPages"]
     main_sub_1_1_handle_results(session)
 end
 
@@ -72,11 +73,11 @@ def main_sub_1_1_handle_results(session)
         session.selected = session.result_list[(input.to_i)-1]   
         main_sub_1_1_handle_selection(session)
     elsif input == ">"
-        session.current_page += 1
+        session.current_page = page_toggle_up(session.current_page,session.total_pages)
         session.result_list = beer_search_with_index(session.current_que,session.current_page)
         main_sub_1_1_handle_results(session)
     elsif input == "<"
-        session.current_page -= 1
+        session.current_page = page_toggle_down(session.current_page)
         session.result_list = beer_search_with_index(session.current_que,session.current_page)
         main_sub_1_1_handle_results(session)
     elsif input.downcase == "cancel"
