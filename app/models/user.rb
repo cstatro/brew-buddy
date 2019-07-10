@@ -10,6 +10,11 @@ class User < ActiveRecord::Base
         input = limit_rating(input)
         rating = Rating.create(user: self,beer: beer, rating: input.to_f)  
     end
+    def save_interest(hash)
+        beer = Beer.find_or_create_by(name: hash["name"],style: hash["style"]["shortName"],abv: hash["abv"],brewery: hash["breweries"].first["name"])
+        rating = Rating.create(user: self,beer: beer)  
+    end
+
 
     def display_ratings
         self.ratings.each_with_index do |rating,index|
@@ -19,6 +24,10 @@ class User < ActiveRecord::Base
 
     def self.drunkest
         User.all.max_by {|user| user.beers.average(:abv).to_f }
+    end
+
+    def beers_interested_in
+        self.interests.map {|i| i.beer}
     end
 
 end
