@@ -15,5 +15,9 @@ class User < ActiveRecord::Base
             puts "#{index+1}. #{rating.beer["name"]} - #{rating.rating}"
         end
     end
-    
+
+    def self.drunkest
+        User.all.max_by {|user| user.beers.average(:abv).to_f }
+    end
+
 end
