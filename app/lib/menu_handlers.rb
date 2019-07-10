@@ -5,7 +5,9 @@ def greet_user
     input.downcase!
     if User.find_by(name: input)
         signed_in_user = User.find_by(name: input)
+        print_line
         puts "Welcome back #{signed_in_user.name.capitalize}!"
+        line_break
         signed_in_user
         ##list menu options
     else

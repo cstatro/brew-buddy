@@ -4,13 +4,19 @@ def print_line
     puts "---------------------------------------------------"
 end
 
+def line_break
+    puts " "
+end
+
 def prompt_for_rating
     puts "Please enter Rating:"
     print_line
 end
 
 def not_found
+    line_break
     puts "Option not found."
+    print_line
 end
 
 ###SESSION OPEN GREETINGS
@@ -46,11 +52,13 @@ end
     ### MAIN MENU - SUB 1-1
 
 def prompt_sub_1_1_search
+    print_line
     puts "Please Enter Search Query:"
     print_line
 end
 
 def prompt_sub_1_1_result
+    print_line
     puts "1. Rate Beer"
     puts "2. Save To My Interests"
     print_line
@@ -63,6 +71,4 @@ def prompt_sub_1_1_selection
     puts "Type Cancel To Back Out To Main Menu"
     print_line
 end
-### MAIN MENU - SUB 2
-# view my ratings
 
