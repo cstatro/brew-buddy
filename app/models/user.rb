@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
     end
     def save_interest(hash)
         beer = Beer.find_or_create_by(name: hash["name"],style: hash["style"]["shortName"],abv: hash["abv"],brewery: hash["breweries"].first["name"])
-        rating = Rating.create(user: self,beer: beer)  
+        rating = Interest.create(user: self,beer: beer)  
     end
 
 
