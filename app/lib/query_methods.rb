@@ -11,6 +11,7 @@ def beer_search_first(arg)
     beer_search(arg).find {|beer|beer}
 end
 
+
 def display_navigation(arg,pg=1)
     puts "There are #{beer_search(arg,pg)["totalResults"]} total results. You are on page #{beer_search(arg,pg)["currentPage"]} of #{beer_search(arg,pg)["numberOfPages"]}. "
     puts "---------------------------------------------------"

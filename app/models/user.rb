@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
         end
     end
 
+    # puts a numbered list of users interests 
     def display_interests
         self.interests.each_with_index do |interest, index|
             puts "#{index+1}. #{interest.beer["name"]} - #{interest.beer["brewery"]}"
