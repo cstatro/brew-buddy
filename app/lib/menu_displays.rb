@@ -38,7 +38,7 @@ end
 ### MAIN MENU - SUB 1
 
 def prompt_sub_one
-    puts "1. Enter Your Search"
+    puts "1. New Search"
     puts "2. Back to Main Menu"
     print_line
 end
@@ -51,12 +51,14 @@ def prompt_sub_1_1_search
 end
 
 def prompt_sub_1_1_result
-    puts "Select from above."
+    puts "1. Rate Beer"
+    puts "2. Save To My Interests"
     print_line
 end
 
-
-
+def prompt_sub_1_1_selection
+    puts "Select Beer From List"
+end
 ### MAIN MENU - SUB 2
 # view my ratings
 

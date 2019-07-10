@@ -7,3 +7,13 @@ def limit_rating(num)
         num
     end
 end
+
+
+#### test method
+def colin 
+    User.find(1)
+end
+
+def joe
+    User.find(2)
+end
