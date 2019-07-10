@@ -15,6 +15,7 @@ class Session
         end
     end
     def main_menu
+        self.u.reload
         self.current_que = nil
         self.result_list = nil
         self.selected = nil
