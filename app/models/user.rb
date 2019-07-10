@@ -37,4 +37,9 @@ class User < ActiveRecord::Base
         self.interests.map {|i| i.beer}
     end
 
+    def average_rating
+        self.ratings.average(:rating).to_f.round(2)
+    end
+    
+
 end
