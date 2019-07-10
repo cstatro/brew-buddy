@@ -22,6 +22,12 @@ class User < ActiveRecord::Base
         end
     end
 
+    def display_interests
+        self.interests.each_with_index do |interest, index|
+            puts "#{index+1}. #{interest.beer["name"]} - #{interest.beer["brewery"]}"
+        end
+    end
+
     def self.drunkest
         User.all.max_by {|user| user.beers.average(:abv).to_f }
     end
