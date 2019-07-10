@@ -58,11 +58,16 @@ def main_sub_one_handle(session)
 end
             ### MAIN MENU - SUB 1-1
 def main_sub_1_1_handle(session)
+    begin 
     prompt_sub_1_1_search
     session.current_que = STDIN.gets.chomp
     session.result_list = beer_search_with_index(session.current_que,session.current_page)
     session.total_pages = beer_search(session.current_que)["numberOfPages"]
     main_sub_1_1_handle_results(session)
+    rescue 
+        puts "No Results!"
+        main_sub_1_1_handle(session)
+    end
 end
 
 def main_sub_1_1_handle_results(session)
