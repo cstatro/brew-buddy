@@ -58,7 +58,7 @@ end
 def main_sub_1_1_handle(session)
     prompt_sub_1_1_search
     session.current_que = STDIN.gets.chomp
-    session.result_list = beer_search_with_index(session.current_que)
+    session.result_list = beer_search_with_index(session.current_que,session.current_page)
     main_sub_1_1_handle_results(session)
 end
 
@@ -70,9 +70,15 @@ def main_sub_1_1_handle_results(session)
         session.selected = session.result_list[(input.to_i)-1]   
         main_sub_1_1_handle_selection(session)
     elsif input == ">"
-        puts "not implemented forward"
+        session.current_page += 1
+        session.result_list = beer_search_with_index(session.current_que,session.current_page)
+        main_sub_1_1_handle_results(session)
     elsif input == "<"
-        puts "not implemented backward"
+        session.current_page -= 1
+        session.result_list = beer_search_with_index(session.current_que,session.current_page)
+        main_sub_1_1_handle_results(session)
+    elsif input.downcase == "cancel"
+        session.main_menu
     else
         not_found
         session.main_menu

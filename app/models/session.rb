@@ -1,5 +1,5 @@
 class Session 
-    attr_accessor :u, :current_que,:result_list,:selected
+    attr_accessor :u, :current_que,:result_list,:selected,:current_page
     def initialize
         ###Put Logo Here
         prompt_sign_in
@@ -18,6 +18,7 @@ class Session
         self.current_que = nil
         self.result_list = nil
         self.selected = nil
+        self.current_page = 1
         display_main_options
         input = STDIN.gets.chomp
         print_line

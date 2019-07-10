@@ -57,7 +57,11 @@ def prompt_sub_1_1_result
 end
 
 def prompt_sub_1_1_selection
-    puts "Select Beer From List"
+    print_line
+    puts "Select Beer From List Using Integer"
+    puts "Use \"<\" or \">\" to turn pages."
+    puts "Type Cancel To Back Out To Main Menu"
+    print_line
 end
 ### MAIN MENU - SUB 2
 # view my ratings
