@@ -26,7 +26,12 @@ class User < ActiveRecord::Base
     end
 
     def user_top_five
-        display_ratings.first(5)
+        user_ratings = self.ratings.sort_by do |rating|
+            rating.rating
+        end.reverse.first(5)
+        user_ratings.each_with_index do |rating,index|
+            puts "#{index+1}. #{rating.beer["name"]} - #{rating.rating}"
+        end
     end
 
     # puts a numbered list of users interests 
