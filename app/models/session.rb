@@ -1,10 +1,12 @@
 class Session 
     attr_accessor :u, :current_que,:result_list,:selected,:current_page,:total_pages
+    
     def initialize
         ## logo
         prompt_sign_in
         toggle_login
     end
+
     def toggle_login
         if !u
             @u = greet_user
@@ -14,6 +16,7 @@ class Session
             self.u = nil
         end
     end
+
     def main_menu
         self.u.reload
         self.current_que = nil

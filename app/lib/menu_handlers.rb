@@ -25,14 +25,10 @@ end
 
 def handle_main_menu_input(input, session)
     case(input.to_i)
-    when 1
-       
-        main_sub_one_handle(session)
-        
+    when 1     
+        main_sub_one_handle(session)       
     when 2
-
         user_profile_header
-
         puts "My Ratings"
         line_break
         session.u.display_ratings
@@ -52,7 +48,6 @@ def handle_main_menu_input(input, session)
         puts "What would you like to do from here?"
         line_break
         session.profile_menu
-
     when 3
         print_line
         puts "The drunkest user is #{User.drunkest.name.capitalize}..."

@@ -108,10 +108,8 @@ def user_profile_header
     line_break
 end
     ### MAIN MENU - SUB 2-1
-    
+
 def user_stats_header
     puts "My Stats"
     line_break
 end
-
-
