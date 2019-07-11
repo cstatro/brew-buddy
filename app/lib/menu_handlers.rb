@@ -40,6 +40,13 @@ def handle_main_menu_input(input, session)
         session.u.display_interests
         print_line
         line_break
+        user_stats_header
+        puts "My Average Rating: #{session.u.average_rating}"
+        puts "Number of Beers Rated: #{session.u.ratings.length}"
+        puts "Favorite Beer Type: #{find_favorite_type(session.u.beers)}"
+        puts "Highest Rated Beer: #{session.u.highest_rated_beer.beer.name}"
+        print_line
+        line_break
         puts "What would you like to do from here?"
         line_break
         session.profile_menu
@@ -56,13 +63,9 @@ end
         def main_sub_two_handle(session)
             input = STDIN.gets.chomp
             case(input.to_i)
-            when 1
-               
-                session.main_menu
-                
-            when 2
-                
-                
+            when 1               
+                session.main_menu              
+            when 2  
                 prompt_remove_beer
                 session.u.display_interests
                 print_line
@@ -70,9 +73,7 @@ end
                 session.u.delete_interest(input)
                 line_break
                 session.main_menu
-
             when 3
-
                 puts "My Ratings"
                 line_break
                 session.u.display_ratings
@@ -80,6 +81,13 @@ end
                 puts "My Interests"
                 line_break
                 session.u.display_interests
+                print_line
+                line_break
+                user_stats_header
+                puts "My Average Rating: #{session.u.average_rating}"
+                puts "Number of Beers Rated: #{session.u.ratings.length}"
+                puts "Favorite Beer Type: #{find_favorite_type(session.u.beers)}"
+                
                 print_line
                 line_break
                 puts "What would you like to do from here?"
@@ -92,8 +100,6 @@ end
                 session.main_menu
             end
         end
-
-
         ### MAIN MENU - SUB 1
 def main_sub_one_handle(session)
     prompt_sub_one
@@ -125,8 +131,7 @@ end
 
 def main_sub_1_1_handle_results(session)
     prompt_sub_1_1_selection
-    input = STDIN.gets.chomp
-    
+    input = STDIN.gets.chomp    
     if input.to_i > 0
         session.selected = session.result_list[(input.to_i)-1]   
         main_sub_1_1_handle_selection(session)

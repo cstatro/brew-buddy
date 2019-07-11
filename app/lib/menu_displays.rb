@@ -47,7 +47,7 @@ end
 def display_profile_options
     puts "1. Back to Main Menu"
     puts "2. Remove a Beer from My Interests"
-    puts "3. My Profile"
+    puts "3. Refresh Page"
     puts "4. Logout"
     print_line
 end
@@ -86,6 +86,13 @@ def prompt_sub_1_1_selection
     puts "Select Beer From List Using Integer"
     puts "Use \"<\" or \">\" to turn pages."
     puts "Type Cancel To Back Out To Main Menu"
+    print_line
+end
+
+    ### MAIN MENU - SUB 2-1
+def user_stats_header
+    print_line
+    puts "My Stats"
     print_line
 end
 
