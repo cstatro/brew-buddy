@@ -42,7 +42,7 @@ def handle_main_menu_input(input, session)
         line_break
         puts "What would you like to do from here?"
         line_break
-        session.main_menu
+        session.profile_menu
 
     when 3
     else
@@ -50,6 +50,50 @@ def handle_main_menu_input(input, session)
         session.main_menu
     end
 end
+
+        #### MAIN MENU - SUB PROFILE
+
+        def main_sub_two_handle(session)
+            input = STDIN.gets.chomp
+            case(input.to_i)
+            when 1
+               
+                session.main_menu
+                
+            when 2
+                
+                
+                prompt_remove_beer
+                session.u.display_interests
+                print_line
+                input = STDIN.gets.chomp
+                session.u.delete_interest(input)
+                line_break
+                session.main_menu
+
+            when 3
+
+                puts "My Ratings"
+                line_break
+                session.u.display_ratings
+                print_line
+                puts "My Interests"
+                line_break
+                session.u.display_interests
+                print_line
+                line_break
+                puts "What would you like to do from here?"
+                line_break
+                session.profile_menu
+
+            when 4
+            else
+                not_found
+                session.main_menu
+            end
+        end
+
+
         ### MAIN MENU - SUB 1
 def main_sub_one_handle(session)
     prompt_sub_one

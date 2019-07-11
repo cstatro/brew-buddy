@@ -41,6 +41,23 @@ def display_main_options
     print_line
 end
 
+
+### MAIN MENU - SUB PROFILE
+
+def display_profile_options
+    puts "1. Back to Main Menu"
+    puts "2. Remove a Beer from My Interests"
+    puts "3. My Profile"
+    puts "4. Logout"
+    print_line
+end
+
+def prompt_remove_beer
+    print_line
+    puts "What Beer would you like to remove?"
+    line_break
+end
+
 ### MAIN MENU - SUB 1
 
 def prompt_sub_one
