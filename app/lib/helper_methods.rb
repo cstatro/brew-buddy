@@ -22,11 +22,7 @@ end
 ### Stats helper
 
 def find_favorite_type(beer_arr)
-    begin
         beer_types = beer_arr.pluck(:style)
         x = beer_types.max_by { |t| beer_types.count(t)}
-        x.name
-    rescue
-        "Bud Light Straw-Ber-Rita"
-    end
+    
 end
