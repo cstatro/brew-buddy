@@ -24,6 +24,10 @@ def page_toggle_down(current)
 end
 ### Stats helper
 def find_favorite_type(beer_arr)
-    beer_types = beer_arr.pluck(:style)
-    beer_types.max_by { |t| beer_types.count(t)}
+    begin
+        beer_types = beer_arr.pluck(:style)
+        beer_types.max_by { |t| beer_types.count(t)}
+    rescue
+        "Bud Light Straw-Ber-Rita"
+    end
 end

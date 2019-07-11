@@ -62,6 +62,7 @@ def handle_main_menu_input(input, session)
         puts "Average Beer Rating: #{Rating.all.average(:rating)}"
         puts "Highest Rated Beer: #{Beer.highest_rated.name} at #{Beer.highest_rated.average_rating}"
         print_line
+        session.main_menu
     when 4
     else
         not_found
