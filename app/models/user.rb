@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
     has_many :ratings
     has_many :interests
-    has_many :beers, through: :ratings]
+    has_many :beers, through: :ratings
     
     def rate_beer(hash)
         beer = Beer.find_or_create_by(name: hash["name"],style: hash["style"]["shortName"],abv: hash["abv"],brewery: hash["breweries"].first["name"])
