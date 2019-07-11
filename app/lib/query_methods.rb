@@ -26,6 +26,7 @@ def beer_search_with_index(arg,pg=1)
             puts "#{index+1}. #{beer["name"]} - #{beer["breweries"].first["name"]}"
         rescue 
             puts "#{index+1}. Duff Beer - Springfield Brewery"
+        end
     end
 end
 
