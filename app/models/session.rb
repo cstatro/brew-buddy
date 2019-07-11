@@ -25,4 +25,17 @@ class Session
         print_line
         handle_main_menu_input(input,self)
     end
+
+    def profile_menu
+        self.u.reload
+        self.current_que = nil
+        self.result_list = nil
+        self.selected = nil
+        self.current_page = 1
+        display_profile_options
+        # input = STDIN.gets.chomp
+        # print_line
+        main_sub_two_handle(self)
+    end
+
 end

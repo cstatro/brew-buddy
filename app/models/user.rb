@@ -15,7 +15,8 @@ class User < ActiveRecord::Base
         rating = Interest.create(user: self,beer: beer)  
     end
 
-
+    
+    
     def display_ratings
         user_ratings = self.ratings.sort_by do |rating|
             rating.rating
@@ -24,8 +25,8 @@ class User < ActiveRecord::Base
             puts "#{rating.rating} - #{rating.beer["name"]}"
         end
     end
-
-
+    
+    
     # not in use
     def user_top_five
         user_ratings = self.ratings.sort_by do |rating|
@@ -35,7 +36,7 @@ class User < ActiveRecord::Base
             puts "#{index+1}. #{rating.beer["name"]} - #{rating.rating}"
         end
     end
-
+    
     # puts a numbered list of users interests 
     def display_interests
         self.interests.each_with_index do |interest, index|
@@ -43,6 +44,12 @@ class User < ActiveRecord::Base
         end
     end
 
+    def delete_interest(input)
+        record = self.interests[input.to_i-1]
+        record.delete
+        record.save
+    end
+    
     def self.drunkest
         User.all.max_by {|user| user.beers.average(:abv).to_f }
     end
