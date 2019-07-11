@@ -111,9 +111,8 @@ def user_profile_header
 end
     ### MAIN MENU - SUB 2-1
 def user_stats_header
-    print_line
     puts "My Stats"
-    print_line
+    line_break
 end
 
 
