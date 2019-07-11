@@ -1,7 +1,7 @@
 class Session 
     attr_accessor :u, :current_que,:result_list,:selected,:current_page,:total_pages
     def initialize
-        ###Put Logo Here
+        ## logo
         prompt_sign_in
         toggle_login
     end

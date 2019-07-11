@@ -8,6 +8,12 @@ def line_break
     puts " "
 end
 
+def break_line_break
+    puts " "
+    puts "---------------------------------------------------"
+    puts " "
+end
+
 def prompt_for_rating
     puts "Please enter Rating:"
     print_line
@@ -22,7 +28,11 @@ end
 ###SESSION OPEN GREETINGS
 
 def prompt_sign_in
-    puts "Welcome to Brew Buddy!"
+    line_break
+    line_break
+    puts "                Welcome to Brew Buddy!"
+    puts "                ----------------------"
+    line_break
     puts "Please Enter Your Name:"
     print_line
 end
@@ -35,6 +45,7 @@ end
 ### MAIN MENU
 
 def display_main_options
+    print_line
     puts "1. Search For Beer"
     puts "2. My Profile"
     puts "3. Logout"
@@ -87,5 +98,15 @@ def prompt_sub_1_1_selection
     puts "Use \"<\" or \">\" to turn pages."
     puts "Type Cancel To Back Out To Main Menu"
     print_line
+end
+
+
+#### HEADERS
+
+
+def user_profile_header
+    line_break
+    puts "                #{u.name.capitalize}'s Profile"
+    line_break
 end
 

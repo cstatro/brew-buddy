@@ -6,7 +6,8 @@ def greet_user
     if User.find_by(name: input)
         signed_in_user = User.find_by(name: input)
         print_line
-        puts "Welcome back #{signed_in_user.name.capitalize}!"
+        line_break
+        puts "                Welcome back #{signed_in_user.name.capitalize}!"
         line_break
         signed_in_user
         ##list menu options
@@ -31,15 +32,16 @@ def handle_main_menu_input(input, session)
         
     when 2
 
+        user_profile_header
+
         puts "My Ratings"
         line_break
         session.u.display_ratings
-        print_line
+        break_line_break
         puts "My Interests"
         line_break
         session.u.display_interests
-        print_line
-        line_break
+        break_line_break
         puts "What would you like to do from here?"
         line_break
         session.profile_menu
@@ -76,12 +78,11 @@ end
                 puts "My Ratings"
                 line_break
                 session.u.display_ratings
-                print_line
+                break_line_break
                 puts "My Interests"
                 line_break
                 session.u.display_interests
-                print_line
-                line_break
+                break_line_break
                 puts "What would you like to do from here?"
                 line_break
                 session.profile_menu

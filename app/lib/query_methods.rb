@@ -14,8 +14,9 @@ end
 
 def display_navigation(arg,pg=1)
     print_line
+    line_break
     puts "There are #{beer_search(arg,pg)["totalResults"]} total results. You are on page #{beer_search(arg,pg)["currentPage"]} of #{beer_search(arg,pg)["numberOfPages"]}. "
-    print_line
+    line_break
 end
 
 # puts a numbered list of search results, array of search results is returned
