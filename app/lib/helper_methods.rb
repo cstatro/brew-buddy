@@ -7,14 +7,6 @@ def limit_rating(num)
         num
     end
 end
-#### test method
-def colin 
-    User.find(1)
-end
-
-def joe
-    User.find(2)
-end
 ### Paginate_Toggling
 def page_toggle_up(current,max)
     current == max ? current : current += 1

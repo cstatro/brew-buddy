@@ -10,7 +10,6 @@ def greet_user
         puts "                Welcome back #{signed_in_user.name.capitalize}!"
         line_break
         signed_in_user
-        ##list menu options
     else
         print_line
         prompt_zipcode
@@ -98,22 +97,21 @@ end
                 user_stats_header
                 puts "My Average Rating: #{session.u.average_rating}"
                 puts "Number of Beers Rated: #{session.u.ratings.length}"
-                puts "Favorite Beer Type: #{find_favorite_type(session.u.beers)}"
-                
+                puts "Favorite Beer Type: #{find_favorite_type(session.u.beers)}"              
                 print_line
                 line_break
                 puts "What would you like to do from here?"
                 line_break
                 session.profile_menu
-
-            when 4
-            
+            when 4          
             else
                 not_found
                 session.main_menu
             end
         end
+
         ### MAIN MENU - SUB 1
+
 def main_sub_one_handle(session)
     prompt_sub_one
     input = STDIN.gets.chomp
@@ -128,14 +126,16 @@ def main_sub_one_handle(session)
     end
     
 end
+
             ### MAIN MENU - SUB 1-1
+
 def main_sub_1_1_handle(session)
     begin 
-    prompt_sub_1_1_search
-    session.current_que = STDIN.gets.chomp
-    session.result_list = beer_search_with_index(session.current_que,session.current_page)
-    session.total_pages = beer_search(session.current_que)["numberOfPages"]
-    main_sub_1_1_handle_results(session)
+        prompt_sub_1_1_search
+        session.current_que = STDIN.gets.chomp
+        session.result_list = beer_search_with_index(session.current_que,session.current_page)
+        session.total_pages = beer_search(session.current_que)["numberOfPages"]
+        main_sub_1_1_handle_results(session)
     rescue 
         puts "No Results!"
         main_sub_1_1_handle(session)
@@ -164,18 +164,14 @@ def main_sub_1_1_handle_results(session)
     end
 end
     
-
-
 def main_sub_1_1_handle_selection(session)
     prompt_sub_1_1_result
     input =  STDIN.gets.chomp 
     case(input.to_i)
-    when 1
-       
+    when 1    
         session.u.rate_beer(session.selected)
         session.main_menu
-    when 2    
-        
+    when 2           
         session.u.save_interest(session.selected)
         session.main_menu
     else 
@@ -183,32 +179,3 @@ def main_sub_1_1_handle_selection(session)
         session.main_menu
     end
 end
-
-
-
-
-
-
-
-
-# def main_sub_1_1_interest(session)
-    
-#     choice = STDIN.gets.chomp
-#     session.u.save_interest(session.result_list[choice.to_i-1])
-#     session.main_menu
-# end
-
-# def main_sub_1_1_rate(session)
-#     prompt_sub_1_1_result
-#     choice = STDIN.gets.chomp
-#     session.u.rate_beer(session.result_list[choice.to_i-1])
-#     session.main_menu
-# end
-
-
-### MAIN MENU - SUB 2
-# view my ratings
-
-
-
-### HANDLING LEAVING REVIEW 

@@ -26,7 +26,6 @@ def not_found
 end
 
 ###SESSION OPEN GREETINGS
-
 def prompt_sign_in
     line_break
     line_break
@@ -101,9 +100,7 @@ def prompt_sub_1_1_selection
     print_line
 end
 
-
 #### HEADERS
-
 
 def user_profile_header
     line_break
@@ -111,6 +108,7 @@ def user_profile_header
     line_break
 end
     ### MAIN MENU - SUB 2-1
+    
 def user_stats_header
     puts "My Stats"
     line_break
