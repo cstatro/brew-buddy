@@ -25,3 +25,9 @@ end
 def page_toggle_down(current)
     current == 1 ? current : current -= 1
 end
+
+### Stats helper
+def find_favorite_type(beer_arr)
+    beer_types = beer_arr.pluck(:style)
+    beer_types.max_by { |t| beer_types.count(t)}
+end

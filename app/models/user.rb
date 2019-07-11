@@ -61,6 +61,9 @@ class User < ActiveRecord::Base
     def average_rating
         self.ratings.average(:rating).to_f.round(2)
     end
+    def highest_rated_beer
+        self.ratings.max_by {|r| r.rating}
+    end
     
 
 end
