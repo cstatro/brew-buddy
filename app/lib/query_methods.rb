@@ -22,7 +22,10 @@ end
 def beer_search_with_index(arg,pg=1)
     display_navigation(arg,pg)
     beer_search(arg,pg)["data"].each_with_index do |beer, index|
-        puts "#{index+1}. #{beer["name"]} - #{beer["breweries"].first["name"]}"
+        begin
+            puts "#{index+1}. #{beer["name"]} - #{beer["breweries"].first["name"]}"
+        rescue 
+            puts "#{index+1}. Duff Beer - Springfield Brewery"
     end
 end
 
