@@ -20,8 +20,8 @@ class User < ActiveRecord::Base
         user_ratings = self.ratings.sort_by do |rating|
             rating.rating
         end.reverse
-        user_ratings.each_with_index do |rating,index|
-            puts "#{index+1}. #{rating.beer["name"]} - #{rating.rating}"
+        user_ratings.each do |rating|
+            puts "#{rating.rating} - #{rating.beer["name"]}"
         end
     end
 
