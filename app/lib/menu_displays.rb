@@ -36,7 +36,7 @@ end
 
 def display_main_options
     puts "1. Search For Beer"
-    puts "2. View My Ratings"
+    puts "2. My Profile"
     puts "3. Logout"
     print_line
 end

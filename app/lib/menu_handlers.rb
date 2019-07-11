@@ -31,8 +31,17 @@ def handle_main_menu_input(input, session)
         
     when 2
 
+        puts "My Ratings"
+        line_break
         session.u.display_ratings
         print_line
+        puts "My Interests"
+        line_break
+        session.u.display_interests
+        print_line
+        line_break
+        puts "What would you like to do from here?"
+        line_break
         session.main_menu
 
     when 3

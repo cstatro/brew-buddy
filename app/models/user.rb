@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
         end
     end
 
+
+    # not in use
     def user_top_five
         user_ratings = self.ratings.sort_by do |rating|
             rating.rating
