@@ -108,6 +108,7 @@ def user_profile_header
     line_break
     puts "                #{u.name.capitalize}'s Profile"
     line_break
+end
     ### MAIN MENU - SUB 2-1
 def user_stats_header
     print_line
