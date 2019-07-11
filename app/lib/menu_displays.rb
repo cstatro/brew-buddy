@@ -48,7 +48,8 @@ def display_main_options
     print_line
     puts "1. Search For Beer"
     puts "2. My Profile"
-    puts "3. Logout"
+    puts "3. Statistics"
+    puts "4. Logout"
     print_line
 end
 

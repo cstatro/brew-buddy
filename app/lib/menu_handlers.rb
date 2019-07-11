@@ -55,6 +55,14 @@ def handle_main_menu_input(input, session)
         session.profile_menu
 
     when 3
+        print_line
+        puts "The drunkest user is #{User.drunkest.name.capitalize}..."
+        puts "Number of Users: #{User.all.length}"
+        puts "Number of Beers Rated: #{Rating.all.length}"
+        puts "Average Beer Rating: #{Rating.all.average(:rating)}"
+        puts "Highest Rated Beer: #{Beer.highest_rated.name} at #{Beer.highest_rated.average_rating}"
+        print_line
+    when 4
     else
         not_found
         session.main_menu
@@ -98,6 +106,7 @@ end
                 session.profile_menu
 
             when 4
+            
             else
                 not_found
                 session.main_menu
