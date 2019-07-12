@@ -10,8 +10,7 @@ Brew Buddy is a CLI App that utilizes the BreweryDB API. It allows you search be
 2. Open the terminal from the project root and run ```ruby bin/run.rb```
 
 
-### Schema
-
+### Schema:
 <p align="center">
 <img  src= "https://github.com/cstatro/brew-buddy/blob/master/assets/Beer.svg">
 </p>
